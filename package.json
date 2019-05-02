@@ -1,0 +1,25 @@
+{
+  "name": "person-v1",
+  "version": "1.0.0",
+  "description": "An API service providing member data from authoritative sources",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpiambulance/person-v1.git"
+  },
+  "author": "Dan Bruce <dan@ddbruce.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rpiambulance/person-v1/issues"
+  },
+  "homepage": "https://github.com/rpiambulance/person-v1#readme",
+  "dependencies": {
+    "cachios": "^2.2.0",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "googleapis": "^39.2.0"
+  }
+}
