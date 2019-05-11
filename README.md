@@ -33,4 +33,4 @@ A Google service account is used to query their APIs. Request the private key fi
 
 ### Contact
 
-For any question, comments, or concerns, email [dev@rpiambulance.com](dev@rpiambulance.com), [create an issue](https://github.com/rpiambulance/person-v1/issues/new), or open up a pull request.
+For any question, comments, or concerns, email [dev@rpiambulance.com](mailto:dev@rpiambulance.com), [create an issue](https://github.com/rpiambulance/person-v1/issues/new), or open up a pull request.
