@@ -1,6 +1,6 @@
 # person v1
 
-This API is authoritative for RPI Ambulance member data. Data is ingested from G Suite and our [training application](https://github.com/rpiambulance/training) (well, not right now, but once that's built out) and provided to services that need it.
+**person-v1** is an authoritative API for RPI Ambulance member data. Data is ingested from G Suite and our [training application](https://github.com/rpiambulance/training) (well, not right now, but once that's built out) and provided to services that need it.
 
 ### Usage
 
@@ -25,7 +25,7 @@ A Google service account is used to query their APIs. Request the private key fi
 
 ### License
 
-person-v1 is provided under the [MIT License](https://opensource.org/licenses/MIT).
+**person-v1** is provided under the [MIT License](https://opensource.org/licenses/MIT).
 
 ### Contact
 
