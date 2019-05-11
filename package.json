@@ -2,7 +2,7 @@
   "name": "person-v1",
   "version": "1.0.0",
   "description": "An API service providing member data from authoritative sources",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
