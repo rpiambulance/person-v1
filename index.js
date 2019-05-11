@@ -59,5 +59,5 @@ app.get("/get/user/:id", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`DC Info API running on post ${PORT}`);
+  console.log(`DC Info API running on port ${PORT}`);
 });
