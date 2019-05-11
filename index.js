@@ -1,21 +1,19 @@
 //node packages
 const express = require("express");
 const os = require("os");
-const dotenv = require("dotenv");
-const { google } = require("googleapis");
+require("dotenv").config();
 
 //local packages
 const packageSpecs = require("./package.json");
-const {} = require("./utilities/dataFunctions.js");
-const privatekey = require("./keys/person-api.json");
+const { getUsers, getUser } = require("./utilities/dataFunctions.js");
 
 //globals
+const API_TOKEN = process.env.API_TOKEN;
 const ENV = process.env.NODE_ENV || "dev";
 const PORT = process.env.NODE_PORT || 3000;
 const HOST = os.hostname();
 
 //package configuration
-dotenv.config();
 const app = express();
 
 //local configuration
@@ -36,47 +34,29 @@ app.get("/health", (req, res) => {
   });
 });
 
-////////////////////
-
-const jwtClient = new google.auth.JWT(
-  privatekey.client_email,
-  null,
-  privatekey.private_key,
-  ["https://www.googleapis.com/auth/admin.directory.user.readonly"],
-  "events@rpiambulance.com"
-);
-//authenticate request
-jwtClient.authorize(function(err, tokens) {
-  if (err) {
-    console.log(err);
-    return;
+app.get("/get/users", async (req, res) => {
+  if (!req.query.token || req.query.token !== API_TOKEN) {
+    res.status(401).send({
+      error: true,
+      code: 401,
+      message: "You did not provide a valid API token."
+    });
   } else {
-    console.log("Successfully connected!");
+    res.send(await getUsers());
   }
 });
 
-const admin = google.admin({
-  version: "directory_v1",
-  auth: jwtClient
-});
-
-admin.users.list(
-  { domain: "rpiambulance.com", projection: "full", maxResults: 500 },
-  (err, res) => {
-    if (err) return console.error("The API returned an error:", err.message);
-    const users = res.data.users;
-    if (users.length) {
-      console.log("Users:");
-      users.forEach(user => {
-        console.log(user);
-      });
-    } else {
-      console.log("No users found.");
-    }
+app.get("/get/user/:id", async (req, res) => {
+  if (!req.query.token || req.query.token !== API_TOKEN) {
+    res.status(401).send({
+      error: true,
+      code: 401,
+      message: "You did not provide a valid API token."
+    });
+  } else {
+    res.send(await getUser(req.params.id));
   }
-);
-
-////////////////////
+});
 
 app.listen(PORT, () => {
   console.log(`DC Info API running on post ${PORT}`);

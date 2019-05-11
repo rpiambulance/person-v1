@@ -34,37 +34,29 @@ jwtClient.authorize(err => {
 
 //functions
 const getUsers = async () => {
-  const {
-    err,
-    res: {
+  try {
+    const {
       data: { users }
-    }
-  } = await admin.users.list({
-    domain: "rpiambulance.com",
-    projection: "full",
-    maxResults: 500
-  });
-  if (err) return console.error("The API returned an error: ", err.message);
-  if (users.length) {
-    return users;
-  } else {
-    return console.error("No users found");
+    } = await admin.users.list({
+      domain: "rpiambulance.com",
+      projection: "full",
+      maxResults: 500
+    });
+    if (users.length) return users;
+  } catch (error) {
+    return console.error("getUser return an error: ", error);
   }
 };
 
 const getUser = async id => {
-  const {
-    err,
-    res: { data }
-  } = await admin.users.get({
-    userKey: id,
-    projection: "full"
-  });
-  if (err) return console.error("The API returned an error: ", err.message);
-  if (data.length) {
-    return data;
-  } else {
-    return console.error("No user found");
+  try {
+    const res = await admin.users.get({
+      userKey: id,
+      projection: "full"
+    });
+    if (res) return res;
+  } catch (error) {
+    return console.error("getUser return an error: ", error);
   }
 };
 
