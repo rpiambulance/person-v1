@@ -1,4 +1,8 @@
-# person v1
+[![Build Status](https://cloud.drone.io/api/badges/rpiambulance/person-v1/status.svg)](https://cloud.drone.io/rpiambulance/person-v1)
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+
+# person-v1
 
 **person-v1** is an authoritative API for RPI Ambulance member data. Data is ingested from G Suite and our [training application](https://github.com/rpiambulance/training) (well, not right now, but once that's built out) and provided to services that need it.
 
