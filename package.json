@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/rpiambulance/person-v1#readme",
   "dependencies": {
-    "cachios": "^2.2.0",
+    "cachios": "^2.2.1",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "googleapis": "^39.2.0"
