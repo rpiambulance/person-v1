@@ -19,7 +19,7 @@ All requests must be accompanied by a query string: `?token=<token>`.
 
 ### Configuration
 
-A Google service account is used to query their APIs. Request the private key file in JSON format, and place it in `/keys` name as `person-api.json`.
+A Google service account is used to query their APIs. Request the private key file in JSON format, and place it in `/keys` named as `person-api.json`.
 
 ## Credits:
 
